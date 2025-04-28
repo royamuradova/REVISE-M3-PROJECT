@@ -1,23 +1,21 @@
-#include "Date.h"
+#include "NumberArray.h"
 #include <iostream>
 using namespace std;
 
 int main() {
-    Date today(4, 28, 2025); // Example: April 28, 2025
+    NumberArray arr(5);
 
-    cout << "Format 1: ";
-    today.printFormat1();
+    arr.storeNumber(0, 10.5);
+    arr.storeNumber(1, 20.3);
+    arr.storeNumber(2, 15.2);
+    arr.storeNumber(3, 5.6);
+    arr.storeNumber(4, 8.9);
 
-    cout << "Format 2: ";
-    today.printFormat2();
+    arr.print();
 
-    cout << "Format 3: ";
-    today.printFormat3();
-
-    if (today.isLeapYear())
-        cout << today.getYear() << " is a leap year." << endl;
-    else
-        cout << today.getYear() << " is not a leap year." << endl;
+    cout << "Highest: " << arr.getHighest() << endl;
+    cout << "Lowest: " << arr.getLowest() << endl;
+    cout << "Average: " << arr.getAverage() << endl;
 
     return 0;
 }
